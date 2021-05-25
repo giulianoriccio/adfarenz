@@ -12,6 +12,6 @@
 			<div id="t" contenteditable="true" style="width:50%">"Modifica il testo dell'epitaffio"</div>
 			<div>- Marco Farina</div>
 		</div>
-        <button onclick="html2canvas(document.getElementById('i')).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();document.body.innerHTML='';document.body.appendChild(i);})" style="position:absolute;top:20px;left:20px;border:0;background:transparent;font-size:32px;">💾</button>
+        <button onclick="html2canvas(document.getElementById('i'),{width:1500}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();document.body.innerHTML='';document.body.appendChild(i);})" style="position:absolute;top:20px;left:20px;border:0;background:transparent;font-size:32px;">💾</button>
 	</body>
 </html>
