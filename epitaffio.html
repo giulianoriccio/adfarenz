@@ -4,14 +4,14 @@
         <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Epitaffio</title>
-        <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet"> 
-        <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
+        <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </head>
-    <body style="padding:0" onload="document.getElementById('t').focus()">
-        <div id="i" style="box-sizing:content-box;display:flex;flex-flow:column;justify-content:center;align-items:flex-end;background:url(bg.jpg) no-repeat bottom left;height:774px;width:1500px;padding-right:50px;font-family:'Rouge Script',cursive;font-size:64px;text-align:right">
-        <div id="t" contenteditable="true" style="width:50%"></div>
-        <div>- Marco Farina</div>
-    </div>
-    <button onclick="html2canvas(document.getElementById('i')).then(c=>document.body.appendChild(c))">salva</button>
-</body>
+    <body style="margin:0;padding:0" onload="document.getElementById('t').focus()">
+        <div id="i" style="box-sizing:border-box;display:flex;flex-flow:column;justify-content:center;align-items:flex-end;background:url(bg.jpg) #fff no-repeat bottom left;background-size: contain;max-width:100%;height:calc(min(100vw, 1500px)*0.516);width:1500px;padding-right:50px;font-family:'Rouge Script',cursive;font-size:calc(min(100vw, 1500px)*0.043);text-align:right">
+			<div id="t" contenteditable="true" style="width:50%">"Modifica il testo dell'epitaffio"</div>
+			<div>- Marco Farina</div>
+		</div>
+        <button onclick="html2canvas(document.getElementById('i')).then(c=>{document.body.innerHTML='';document.body.appendChild(c)})" style="position:absolute;top:20px;left:20px;border:0;background:transparent;font-size:32px;">💾</button>
+	</body>
 </html>
