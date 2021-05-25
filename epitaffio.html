@@ -15,6 +15,15 @@
             }
 
             #i {
+                --raw-width: 1200;
+                --width: calc(var(--raw-width) * 1px);
+                --raw-height: 774;
+                --height: calc(var(--raw-height) * 1px);
+                --raw-font-size: 64;
+                --font-size: calc(var(--raw-font-size) * 1px);
+                --raw-padding-right: 50;
+                --padding-right: calc(var(--raw-font-size) * 1px);
+                --ratio: calc(min(var(--width), 100vw) / var(--raw-width));
                 box-sizing: border-box;
                 display: flex;
                 flex-flow: column;
@@ -22,20 +31,19 @@
                 align-items: flex-end;
                 background: url(bg.jpg) #fff no-repeat bottom left;
                 background-size: contain;
-                max-width: 100%;
-                width: 1500px;
-                height: calc(min(100vw, 1500px) * 0.516);
-                padding-right: calc(min(100vw, 1500px) * 0.03333);
+                width: calc(var(--ratio) * var(--raw-width));
+                height: calc(var(--ratio) * var(--raw-height));
+                padding-right: calc(var(--ratio) * var(--raw-padding-right));
                 font-family: "Rouge Script", cursive;
-                font-size: calc(min(100vw, 1500px) * 0.043);
+                font-size: calc(var(--ratio) * var(--raw-font-size));
                 text-align: right;
             }
 
             .save #i {
-                max-width: none;
-                height: 774px;
-                padding-right: 50px;
-                font-size: 64px;
+                width: var(--width);
+                height: var(--height);
+                padding-right: var(--padding-right);
+                font-size: var(--font-size);
             }
 
             .save img {
@@ -43,7 +51,7 @@
             }
 
             #t {
-                width: 50%;
+                width: 55%;
             }
 
             button {
@@ -63,6 +71,6 @@
             </div>
             <div>- Marco Farina</div>
         </div>
-        <button onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1500}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})">💾</button>
+        <button onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1200}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})">💾</button>
     </body>
 </html>
