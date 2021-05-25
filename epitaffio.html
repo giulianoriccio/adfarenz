@@ -8,10 +8,10 @@
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </head>
     <body style="margin:0;padding:0" onload="document.getElementById('t').focus()">
-        <div id="i" style="box-sizing:border-box;display:flex;flex-flow:column;justify-content:center;align-items:flex-end;background:url(bg.jpg) #fff no-repeat bottom left;background-size: contain;max-width:100%;height:calc(min(100vw, 1500px)*0.516);width:1500px;padding-right:50px;font-family:'Rouge Script',cursive;font-size:calc(min(100vw, 1500px)*0.043);text-align:right">
+        <div id="i" style="box-sizing:border-box;display:flex;flex-flow:column;justify-content:center;align-items:flex-end;background:url(bg.jpg) #fff no-repeat bottom left;background-size: contain;max-width:100%;height:calc(min(100vw, 1500px)*0.516);width:1500px;padding-right:0.033%;font-family:'Rouge Script',cursive;font-size:calc(min(100vw, 1500px)*0.043);text-align:right">
 			<div id="t" contenteditable="true" style="width:50%">"Modifica il testo dell'epitaffio"</div>
 			<div>- Marco Farina</div>
 		</div>
-        <button onclick="html2canvas(document.getElementById('i'),{width:1500}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();document.body.innerHTML='';document.body.appendChild(i);})" style="position:absolute;top:20px;left:20px;border:0;background:transparent;font-size:32px;">💾</button>
+        <button onclick="var i=document.getElementById('i');i.style.width='1500px';i.style.height='774px';i.style.maxWidth='';html2canvas(document.getElementById('i')).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();document.body.innerHTML='';document.body.appendChild(i);})" style="position:absolute;top:20px;left:20px;border:0;background:transparent;font-size:32px;">💾</button>
 	</body>
 </html>
