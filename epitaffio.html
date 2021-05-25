@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Epitaffio</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap')</style>
+<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"><script>
+</head>
+<body style="padding:0" onload="document.getElementById('t').focus()">
+<div id="i" style="box-sizing:content-box;display:flex;flex-flow:column;justify-content:center;align-items:flex-end;background:url(bg.jpg) no-repeat bottom left;height:774px;width:1500px;padding-right:50px;font-family:'Rouge Script',cursive;font-size:64px;text-align:right">
+<div id="t" contenteditable="true" style="width:50%"></div>
+<div>- Marco Farina</div>
+</div>
+<button onclick="html2canvas(document.getElementById('i')).then(c=>document.body.appendChild(c))">salva</button>
+</body>
+</html>
