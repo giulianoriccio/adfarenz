@@ -57,6 +57,7 @@
                 position: relative;
                 quotes: "\201C""\201D""\2018""\2019";
                 max-width: 55%;
+                min-width: 30%;
                 text-align: left;
                 word-break: break-all;
             }
@@ -71,6 +72,7 @@
             #t::after {
                 content: close-quote;
                 position: relative;
+                right: -5px;
             }
 
             #t div:last-of-type {
@@ -93,7 +95,7 @@
     </head>
     <body onload="document.getElementById('t').focus()">
         <div id="i">
-            <div id="t" contenteditable="true">Modifica il testo dell'epitaffio</div>
+            <span id="t" contenteditable="true">Modifica il testo dell'epitaffio</span>
             <div>- Marco Farina</div>
         </div>
         <button
