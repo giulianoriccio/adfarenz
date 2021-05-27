@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Epitaffio</title>
-        <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+            rel="stylesheet"
+        />
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <style>
             body,
@@ -51,8 +54,34 @@
             }
 
             #t {
-                width: 55%;
-				word-break: break-all;
+                position: relative;
+                quotes: "\201C""\201D""\2018""\2019";
+                max-width: 55%;
+                padding-right: 10px;
+                text-align: left;
+                word-break: break-all;
+            }
+
+            #t::before {
+                content: open-quote;
+                position: absolute;
+                top: 0;
+                left: -10px;
+            }
+
+            #t::after {
+                content: close-quote;
+                position: relative;
+                right: -10px;
+                margin-left: -10px;
+            }
+
+            #t div:last-of-type {
+                display: inline;
+            }
+
+            #t br:last-child {
+                display: none;
             }
 
             button {
@@ -67,11 +96,13 @@
     </head>
     <body onload="document.getElementById('t').focus()">
         <div id="i">
-            <div id="t" contenteditable="true">
-                "Modifica il testo dell'epitaffio"
-            </div>
+            <div id="t" contenteditable="true">Modifica il testo dell'epitaffio</div>
             <div>- Marco Farina</div>
         </div>
-        <button onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1200}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})">💾</button>
+        <button
+            onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1200}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})"
+        >
+            💾
+        </button>
     </body>
 </html>
