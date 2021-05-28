@@ -111,24 +111,11 @@
             }
         </style>
     </head>
-    <body
-        onload="var t=document.querySelector('textarea');document.getElementById('t').dataset.replicatedValue=t.value;t.focus();t.setSelectionRange(0,t.value.length);"
-    >
+    <body onload="var t=document.querySelector('textarea');document.getElementById('t').dataset.replicatedValue=t.value;t.focus();t.setSelectionRange(0,t.value.length);">
         <div id="i">
-            <div id="t"><textarea
-                    name="text"
-                    id="text"
-                    oninput="this.parentNode.dataset.replicatedValue=this.value"
-                    onload=""
-                >
-Modifica il testo dell'epitaffio</textarea
-                ></div>
+            <div id="t"><textarea name="text" id="text" oninput="this.parentNode.dataset.replicatedValue=this.value">Modifica il testo dell'epitaffio</textarea></div>
             <div>- Marco Farina</div>
         </div>
-        <button
-            onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1200}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})"
-        >
-            💾
-        </button>
+        <button onclick="var b=document.body;b.classList.add('save');html2canvas(document.getElementById('i'),{width:1200}).then(c=>{var i=document.createElement('img');i.src=c.toDataURL();b.innerHTML='';b.appendChild(i);})">💾</button>
     </body>
 </html>
