@@ -25,7 +25,7 @@
                 --raw-font-size: 64;
                 --font-size: calc(var(--raw-font-size) * 1px);
                 --raw-padding-right: 50;
-                --padding-right: calc(var(--raw-font-size) * 1px);
+                --padding-right: calc(var(--raw-padding-right) * 1px);
                 --ratio: calc(min(var(--width), 100vw) / var(--raw-width));
                 box-sizing: border-box;
                 display: flex;
@@ -59,7 +59,7 @@
                 quotes: "\201C""\201D""\2018""\2019";
                 max-width: 55%;
                 min-width: 30%;
-                padding: 0 0 0 15px;
+                padding: 0;
                 color: #000;
                 text-align: left;
                 word-break: break-all;
@@ -70,7 +70,7 @@
                 content: open-quote;
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: -1ch;
             }
 
             #t::after {
@@ -87,7 +87,7 @@
                 height: 100%;
                 width: 100%;
                 margin: 0;
-                padding: 0 0 0 15px;
+                padding: 0;
                 border: 0;
                 outline: 0;
                 background: transparent;
