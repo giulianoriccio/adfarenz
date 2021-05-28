@@ -37,6 +37,7 @@
                 width: calc(var(--ratio) * var(--raw-width));
                 height: calc(var(--ratio) * var(--raw-height));
                 padding-right: calc(var(--ratio) * var(--raw-padding-right));
+                color: #000;
                 font-family: "Rouge Script", cursive;
                 font-size: calc(var(--ratio) * var(--raw-font-size));
                 text-align: right;
@@ -58,32 +59,49 @@
                 quotes: "\201C""\201D""\2018""\2019";
                 max-width: 55%;
                 min-width: 30%;
+                padding: 0 0 0 15px;
+                color: #000;
                 text-align: left;
                 word-break: break-all;
+                white-space: pre-wrap;
             }
 
             #t::before {
                 content: open-quote;
                 position: absolute;
                 top: 0;
-                left: -10px;
+                left: 0;
             }
 
             #t::after {
-                content: close-quote;
-                position: relative;
-                right: -5px;
+                content: attr(data-replicated-value) close-quote;
             }
 
-            #t div:last-of-type {
-                display: inline;
+            #t > textarea {
+                box-sizing: border-box;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0 0 0 15px;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                color: transparent;
+                caret-color: #000000;
+                font-family: inherit;
+                font-size: inherit;
             }
 
-            #t br:last-child {
-                display: none;
+            #t > textarea {
+                resize: none;
+                overflow: hidden;
             }
 
             button {
+                cursor: pointer;
                 position: absolute;
                 top: 20px;
                 left: 20px;
@@ -93,9 +111,18 @@
             }
         </style>
     </head>
-    <body onload="document.getElementById('t').focus()">
+    <body
+        onload="var t=document.querySelector('textarea');document.getElementById('t').dataset.replicatedValue=t.value;t.focus();t.setSelectionRange(0,t.value.length);"
+    >
         <div id="i">
-            <span id="t" contenteditable="true">Modifica il testo dell'epitaffio</span>
+            <div id="t"><textarea
+                    name="text"
+                    id="text"
+                    oninput="this.parentNode.dataset.replicatedValue=this.value"
+                    onload=""
+                >
+Modifica il testo dell'epitaffio</textarea
+                ></div>
             <div>- Marco Farina</div>
         </div>
         <button
